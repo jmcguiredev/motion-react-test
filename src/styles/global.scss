@@ -1,0 +1,24 @@
+@mixin center-col {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1, h4 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body, #root {
+    @include center-col;
+}
+
+#app {
+    @include center-col;
+}
+
+.box {
+    width: 3rem;
+    height: 3rem;
+    background-color: rgb(255, 48, 82);
+    border-radius: 0.75rem;
+}
