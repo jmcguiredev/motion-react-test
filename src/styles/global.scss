@@ -22,3 +22,13 @@ body, #root {
     background-color: rgb(255, 85, 170);
     border-radius: 0.75rem;
 }
+
+.item {
+    width: 56%;
+    overflow: visible;
+    stroke: rgb(0, 0, 0);
+    stroke-width: 2;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+  }
+  
