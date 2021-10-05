@@ -28,7 +28,7 @@ const containerVariants = {
     },
     finish: {
         y: -50,
-        background: "rgb(17, 16, 56, 1)",
+        background: "rgb(50, 16, 56, 1)",
         scale: nameSizeEnd,
     }
 }
