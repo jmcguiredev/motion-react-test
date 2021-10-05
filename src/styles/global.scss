@@ -30,7 +30,16 @@ body {
   background-color: rgb(73, 0, 116);
   -webkit-box-shadow: inset 0px -8px 15px -10px #000411;
   box-shadow: inset 0px -12px 30px -10px #000411;
-
-  display: flex;
   
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
+
+.reset-animation {
+  margin: 0rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
