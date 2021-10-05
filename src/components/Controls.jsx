@@ -14,7 +14,7 @@ const Controls = ({}) => {
         }}
       >
         <RotateCw className="reset-animation" color="white" />
-      </motion.div>{" "}
+      </motion.div>
     </div>
   );
 };
