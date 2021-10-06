@@ -3,12 +3,21 @@ import { RotateCw } from "react-feather";
 import { motion } from "framer-motion";
 
 const Controls = ({}) => {
+
+  let variants = {
+    start: { transform: "scale(1)" },
+    finish: { transform: "scale(1.1)" },
+    click: { transform: "rotate(180deg)" },
+  };
+
+
   return (
     <div className="controls">
       <motion.div
-        variants={{ start: { transform: "scale(0.9) rotate(0deg)"}, finish: { transform: "scale(1) rotate(180deg)"} }}
+        variants={variants}
         initial="start"
         whileHover="finish"
+        whileTap="click"
         transition={{
           transform: { duration: 0.2 },
         }}
