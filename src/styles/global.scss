@@ -7,7 +7,14 @@ body {
   background: rgb(0, 4, 17);
 }
 
+#app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .container {
+  margin-top: 5rem;
   width: 1200px;
   height: 400px;
   display: flex;
@@ -30,7 +37,7 @@ body {
   background-color: rgb(73, 0, 116);
   -webkit-box-shadow: inset 0px -8px 15px -10px #000411;
   box-shadow: inset 0px -12px 30px -10px #000411;
-  
+  z-index: 1;
   display: flex;
   justify-content: flex-end;
   align-items: center;

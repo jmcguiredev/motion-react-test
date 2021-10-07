@@ -4,9 +4,15 @@ import Controls from "./components/Controls";
 
 
 const App = () => {
+
+  const handleRefresh = () => {
+
+  }
+
   return (
     <div id="app">
       <Controls />
+      <Name />
     </div>
   );
 };
