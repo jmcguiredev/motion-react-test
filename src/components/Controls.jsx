@@ -1,26 +1,30 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { RotateCw } from "react-feather";
-import { motion } from "framer-motion";
+import { motion, useTransform, useAnimation } from "framer-motion";
 
 const Controls = ({}) => {
 
-  let variants = {
-    start: { transform: "scale(1)" },
-    finish: { transform: "scale(1.1)" },
-    click: { transform: "rotate(180deg)" },
-  };
+  const controls = useAnimation();
 
+  const tap = () => {
+    controls
+      .start({
+        transform: "rotate(360deg)",
+        transition: { duration: 0.4 },
+      })
+      .then(() => {
+        controls.start({
+          transform: "rotate(0deg)",
+          transition: { duration: 0 },
+        });
+      });
+  };
 
   return (
     <div className="controls">
       <motion.div
-        variants={variants}
-        initial="start"
-        whileHover="finish"
-        whileTap="click"
-        transition={{
-          transform: { duration: 0.2 },
-        }}
+        animate={controls}
+        onTap={tap}
       >
         <RotateCw className="reset-animation" color="white" />
       </motion.div>
