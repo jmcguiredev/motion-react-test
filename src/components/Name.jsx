@@ -1,50 +1,45 @@
-import React, { useState } from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
+import { motion, useAnimation } from "framer-motion";
 // paths generated on https://danmarshall.github.io/google-font-to-svg-path/
-const { hello, jmcguiredev } = require("../paths.json");
-const TextToSVG = require("text-to-svg");
+const { jmcguiredev } = require("../paths.json");
 
-const nameSizeStart = 0.3;
-const nameSizeEnd = 1;
-
-const nameVariants = {
-  start: {
-    pathLength: 0,
-    fill: "rgba(255, 255, 255, 0)",
-    stroke: "rgb(243, 0, 162, 0)",
-  },
-  finish: {
-    pathLength: 1,
-    fill: "rgba(255, 255, 255, 0)",
-    stroke: "rgb(250, 0, 229, 1)",
-  },
-};
-
-const containerVariants = {
-    start: {
-        y: -800,
-        background: "rgb(50, 16, 56, 0)",
-        scale: nameSizeStart,
-    },
-    finish: {
-        y: -50,
-        background: "rgb(50, 16, 56, 1)",
-        scale: nameSizeEnd,
-    }
-}
 
 const Name = () => {
+  const contControls = useAnimation();
+  const textControls = useAnimation();
+  const nameSizeStart = 0.3;
+const nameSizeEnd = 1;
+
+  useEffect(() => {
+    load();
+  })
+
+  const load = () => {
+    textControls
+      .start({
+        pathLength: [0, 1],
+        fill: "rgba(255, 255, 255, 0)",
+        stroke: ["rgb(243, 0, 162, 0)", "rgb(250, 0, 229, 1)"],
+        transition: { pathLength: { duration: 15}, stroke: { duration: 4 } },
+      });
+
+    contControls.start({
+      y: [-800, -50],
+      background: ["rgb(50, 16, 56, 0)", "rgb(50, 16, 56, 1)"],
+      scale: [nameSizeStart, nameSizeEnd],
+      transition: {
+        y: { duration: 2, ease: "easeOut" },
+        background: { duration: 3 },
+        scale: { duration: 5, ease: "easeOut" },
+      }
+    });
+  };
+
   return (
-    <motion.div 
-        className="container" 
-        variants={containerVariants}
-        initial="start"
-        animate="finish"
-        transition={{ 
-            y: { duration: 2, ease: "easeOut" },
-            background: { duration: 3},
-            scale: { duration: 5, ease: "easeOut"}
-            }}>
+    <motion.div
+      className="container"
+      animate={contControls}
+    >
       <motion.svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="175 -50 200 200"
@@ -52,13 +47,7 @@ const Name = () => {
       >
         <motion.path
           d={jmcguiredev}
-          variants={nameVariants}
-          initial="start"
-          animate="finish"
-          transition={{
-            stroke: { duration: 3},
-            pathLength: { duration: 15, delay: 1}
-          }}
+          animate={textControls}
         />
       </motion.svg>
     </motion.div>
