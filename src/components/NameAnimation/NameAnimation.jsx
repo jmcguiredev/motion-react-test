@@ -42,7 +42,7 @@ const NameAnimation = ({ }) => {
       <motion.svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="175 -50 200 200"
-        className="item"
+        className="name-svg"
       >
         <motion.path d={jmcguiredev} animate={textControls} />
       </motion.svg>
