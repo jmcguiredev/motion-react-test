@@ -3,25 +3,26 @@ import { motion, useAnimation } from "framer-motion";
 // paths generated on https://danmarshall.github.io/google-font-to-svg-path/
 const { jmcguiredev } = require("../paths.json");
 
+const Name = ({ refresh }) => {
 
-const Name = () => {
   const contControls = useAnimation();
   const textControls = useAnimation();
   const nameSizeStart = 0.3;
-const nameSizeEnd = 1;
+  const nameSizeEnd = 1;
 
   useEffect(() => {
     load();
-  })
+  });
+
+  
 
   const load = () => {
-    textControls
-      .start({
-        pathLength: [0, 1],
-        fill: "rgba(255, 255, 255, 0)",
-        stroke: ["rgb(243, 0, 162, 0)", "rgb(250, 0, 229, 1)"],
-        transition: { pathLength: { duration: 15}, stroke: { duration: 4 } },
-      });
+    textControls.start({
+      pathLength: [0, 1],
+      fill: "rgba(255, 255, 255, 0)",
+      stroke: ["rgb(243, 0, 162, 0)", "rgb(250, 0, 229, 1)"],
+      transition: { pathLength: { duration: 15 }, stroke: { duration: 4 } },
+    });
 
     contControls.start({
       y: [-800, -50],
@@ -31,24 +32,18 @@ const nameSizeEnd = 1;
         y: { duration: 2, ease: "easeOut" },
         background: { duration: 3 },
         scale: { duration: 5, ease: "easeOut" },
-      }
+      },
     });
   };
 
   return (
-    <motion.div
-      className="container"
-      animate={contControls}
-    >
+    <motion.div className="container" animate={contControls}>
       <motion.svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="175 -50 200 200"
         className="item"
       >
-        <motion.path
-          d={jmcguiredev}
-          animate={textControls}
-        />
+        <motion.path d={jmcguiredev} animate={textControls} />
       </motion.svg>
     </motion.div>
   );

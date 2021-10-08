@@ -1,18 +1,20 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import Name from "./components/Name";
 import Controls from "./components/Controls";
 
 
 const App = () => {
 
-  const handleRefresh = () => {
+  const [refresh, setRefresh] = useState(false);
 
+  const handleRefresh = () => {
+    setRefresh(!refresh);
   }
 
   return (
     <div id="app">
-      <Controls />
-      <Name />
+      <Controls handleClick={handleRefresh} />
+      <Name refresh={refresh}/>
     </div>
   );
 };

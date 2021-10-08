@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { RotateCw } from "react-feather";
 import { motion, useTransform, useAnimation } from "framer-motion";
 
-const Controls = ({}) => {
+const Controls = ({ handleClick }) => {
 
   const rotateDur = 0.4;
   const hoverDur = 0.1;
@@ -36,6 +36,7 @@ const Controls = ({}) => {
       <motion.div
         animate={controls}
         onTap={tap}
+        onClick={handleClick}
         onHoverStart={hoverOn}
         onHoverEnd={hoverOff}
       >
