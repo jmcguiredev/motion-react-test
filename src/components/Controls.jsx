@@ -1,47 +1,11 @@
-import React, { useState, useEffect } from "react";
-import { RotateCw } from "react-feather";
-import { motion, useTransform, useAnimation } from "framer-motion";
+import React from "react";
+
+import RefreshButton from "./RefreshButton";
 
 const Controls = ({ handleClick }) => {
-
-  const rotateDur = 0.4;
-  const hoverDur = 0.1;
-
-  const controls = useAnimation();
-
-  const tap = () => {
-    controls
-      .start({
-        rotate: [0, 360],
-        transition: { duration: rotateDur },
-      });
-  };
-
-  const hoverOn = () => {
-    controls.start({
-      scale: [1, 1.1],
-      transition: { duration: hoverDur }
-    });
-  }
-
-  const hoverOff = () => {
-    controls.start({
-      scale: [1.1, 1],
-      transition: { duration: hoverDur }
-    })
-  }
-
   return (
     <div className="controls">
-      <motion.div
-        animate={controls}
-        onTap={tap}
-        onClick={handleClick}
-        onHoverStart={hoverOn}
-        onHoverEnd={hoverOff}
-      >
-        <RotateCw className="reset-animation" color="white" />
-      </motion.div>
+      <RefreshButton handleClick={handleClick} />
     </div>
   );
 };
