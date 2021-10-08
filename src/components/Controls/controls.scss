@@ -1,0 +1,11 @@
+.controls {
+    height: 3rem;
+    width: 100%;
+    background-color: rgb(73, 0, 116);
+    -webkit-box-shadow: inset 0px -8px 15px -10px #000411;
+    box-shadow: inset 0px -12px 30px -10px #000411;
+    z-index: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }

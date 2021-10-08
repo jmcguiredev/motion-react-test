@@ -1,6 +1,6 @@
 import React, { Component, useState } from "react";
-import Name from "./components/Name";
-import Controls from "./components/Controls";
+import Name from "./components/NameAnimation/NameAnimation";
+import Controls from "./components/Controls/Controls";
 
 
 const App = () => {

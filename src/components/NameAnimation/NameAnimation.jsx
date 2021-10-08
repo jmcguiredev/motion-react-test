@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 // paths generated on https://danmarshall.github.io/google-font-to-svg-path/
-const { jmcguiredev } = require("../paths.json");
+const { jmcguiredev } = require("../../paths.json");
+import './nameAnimation.scss'
 
-const Name = ({ refresh }) => {
+const NameAnimation = ({ }) => {
 
   const contControls = useAnimation();
   const textControls = useAnimation();
@@ -37,7 +38,7 @@ const Name = ({ refresh }) => {
   };
 
   return (
-    <motion.div className="container" animate={contControls}>
+    <motion.div className="name-container" animate={contControls}>
       <motion.svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="175 -50 200 200"
@@ -49,4 +50,4 @@ const Name = ({ refresh }) => {
   );
 };
 
-export default Name;
+export default NameAnimation;

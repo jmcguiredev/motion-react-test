@@ -1,6 +1,7 @@
 import React from "react";
 import { RotateCw } from "react-feather";
 import { motion, useAnimation } from "framer-motion";
+import './refreshButton.scss';
 
 const RefreshButton = ({ handleClick }) => {
   const rotateDur = 0.4;
@@ -37,7 +38,7 @@ const RefreshButton = ({ handleClick }) => {
       onHoverStart={hoverOn}
       onHoverEnd={hoverOff}
     >
-      <RotateCw className="reset-animation" color="white" />
+      <RotateCw className="reset-animation-button" color="white" />
     </motion.div>
   );
 };
