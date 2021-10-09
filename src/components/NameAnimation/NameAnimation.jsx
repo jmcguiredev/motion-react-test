@@ -9,7 +9,7 @@ const NameAnimation = ({ }) => {
   const contControls = useAnimation();
   const textControls = useAnimation();
   const nameSizeStart = 0.3;
-  const nameSizeEnd = 1;
+  const nameSizeEnd = 0.75;
 
   useEffect(() => {
     load();
