@@ -18,6 +18,7 @@ const NameAnimation = ({ }) => {
   
 
   const load = () => {
+    
     textControls.start({
       pathLength: [0, 1],
       fill: "rgba(255, 255, 255, 0)",
