@@ -1,21 +1,12 @@
 import React from "react";
 import RefreshButton from "../RefreshButton/RefreshButton";
+import Select from '../Select/Select';
 import "./controls.scss";
 
 const Controls = ({ handleClick, componentNames, selected, handleSelect }) => {
   return (
     <div className="controls">
-      <select
-        className="controls-select"
-        value={selected}
-        onChange={handleSelect}
-      >
-        {componentNames.map((componentName) => (
-          <option key={componentName} value={componentName}>
-            {componentName}
-          </option>
-        ))}
-      </select>
+      <Select componentNames={componentNames} selected={selected} handleSelect={handleSelect}/>
       <RefreshButton handleClick={handleClick} />
     </div>
   );
