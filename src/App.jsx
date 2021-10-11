@@ -8,36 +8,28 @@ const App = () => {
   const [refresh, setRefresh] = useState(false);
   const [selected, setSelected] = useState(Name.name);
   const [loaded, setLoaded] = useState(false);
-  const [resized, setResized] = useState(false);
-  const [next, setNext] = useState(null);
   const boxControls = useAnimation();
 
   const componentChoices = {
     components: [
-      <Name refresh={refresh} loaded={loaded}/>,
+      <Name refresh={refresh} />,
       <TestComponent refresh={refresh} />,
     ],
-    componentNames: [Name.name, TestComponent.name],
+    componentNames: ["Name", "TestComponent"],
   };
 
   const handleSelect = (e) => {
-    // setNext(e.target.value);
-
     let index = componentChoices.componentNames.indexOf(e.target.value);
-    
+
     boxControls.start({
       x: -(window.innerWidth * index),
       transition: {
-        right: { duration: 2 }
-      }
+        x: { duration: 2 },
+      },
     });
 
     setSelected(e.target.value);
-    
-      setLoaded(true);
-    
-
-  }
+  };
 
   const handleRefresh = () => {
     setRefresh(!refresh);
@@ -55,15 +47,15 @@ const App = () => {
       <motion.div animate={boxControls} className="component-slider">
         {componentChoices.componentNames.map((component) => {
           let index = componentChoices.componentNames.indexOf(component);
-            return (
-              <motion.div
-                className={`component-slider-box component-slider-box-${index}`}
-                key={index}
-                style={{ right: -((index) * 100) + "vw" }}
-              >
-                {componentChoices.components[index]}
-              </motion.div>
-            );
+          return (
+            <motion.div
+              className={`component-slider-box component-slider-box-${index}`}
+              key={index}
+              style={{ right: -(index * 100) + "vw" }}
+            >
+              {componentChoices.components[index]}
+            </motion.div>
+          );
         })}
       </motion.div>
     </div>

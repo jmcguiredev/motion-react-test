@@ -4,7 +4,7 @@ import { motion, useAnimation } from "framer-motion";
 const { jmcguiredev } = require("../../paths.json");
 import './nameAnimation.scss'
 
-const NameAnimation = ({ loaded }) => {
+const NameAnimation = React.memo(({ refresh, loaded }) => {
 
   const contControls = useAnimation();
   const textControls = useAnimation();
@@ -49,6 +49,6 @@ const NameAnimation = ({ loaded }) => {
       </motion.svg>
     </motion.div>
   );
-};
+});
 
 export default NameAnimation;
