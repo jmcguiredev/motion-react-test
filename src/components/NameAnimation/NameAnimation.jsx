@@ -4,7 +4,7 @@ import { motion, useAnimation } from "framer-motion";
 const { jmcguiredev } = require("../../paths.json");
 import './nameAnimation.scss'
 
-const NameAnimation = ({ }) => {
+const NameAnimation = ({ loaded }) => {
 
   const contControls = useAnimation();
   const textControls = useAnimation();
@@ -23,7 +23,7 @@ const NameAnimation = ({ }) => {
       pathLength: [0, 1],
       fill: "rgba(255, 255, 255, 0)",
       stroke: ["rgb(243, 0, 162, 0)", "rgb(250, 0, 229, 1)"],
-      transition: { pathLength: { duration: 15 }, stroke: { duration: 4 } },
+      transition: { pathLength: { duration: loaded ? 0 : 15 }, stroke: { duration: loaded ? 0 : 4 } },
     });
 
     contControls.start({
@@ -31,9 +31,9 @@ const NameAnimation = ({ }) => {
       background: ["rgb(50, 16, 56, 0)", "rgb(50, 16, 56, 1)"],
       scale: [nameSizeStart, nameSizeEnd],
       transition: {
-        y: { duration: 2, ease: "easeOut" },
-        background: { duration: 3 },
-        scale: { duration: 5, ease: "easeOut" },
+        y: { duration: loaded ? 0 : 2, ease: "easeOut" },
+        background: { duration: loaded ? 0 : 3 },
+        scale: { duration: loaded ? 0 : 5, ease: "easeOut" },
       },
     });
   };

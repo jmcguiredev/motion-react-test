@@ -7,37 +7,41 @@ import { motion, useAnimation } from "framer-motion";
 const App = () => {
   const [refresh, setRefresh] = useState(false);
   const [selected, setSelected] = useState(Name.name);
+  const [loaded, setLoaded] = useState(false);
   const [resized, setResized] = useState(false);
   const [next, setNext] = useState(null);
   const boxControls = useAnimation();
 
   const componentChoices = {
     components: [
-      <Name refresh={refresh} />,
+      <Name refresh={refresh} loaded={loaded}/>,
       <TestComponent refresh={refresh} />,
     ],
     componentNames: [Name.name, TestComponent.name],
   };
 
   const handleSelect = (e) => {
-    setNext(e.target.value);
+    // setNext(e.target.value);
 
     let index = componentChoices.componentNames.indexOf(e.target.value);
-    setSelected(e.target.value);
+    
     boxControls.start({
       x: -(window.innerWidth * index),
       transition: {
-        right: { duration: 1 }
+        right: { duration: 2 }
       }
-    }).then(() => {
-      
-      setNext(null);
     });
+
+    setSelected(e.target.value);
+    
+      setLoaded(true);
+    
 
   }
 
   const handleRefresh = () => {
     setRefresh(!refresh);
+    setLoaded(!loaded);
   };
 
   return (
