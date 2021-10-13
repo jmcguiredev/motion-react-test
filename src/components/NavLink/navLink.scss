@@ -8,3 +8,13 @@
         color: rgb(0, 197, 148);
     }
 }
+
+.navbar-link-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.underline {
+    width: 100%;
+    border-bottom: 3px solid rgb(0, 197, 148);
+}
