@@ -1,14 +1,13 @@
 .controls-select {
-    background-color: rgb(12, 0, 34);
-    color: rgb(180, 140, 255);
-    border: 1px solid rgba(234, 0, 255, 0.637);
-    border-radius: 0.25rem;
-    width: 20rem;
-    height: 2rem;
-    font-size: 1.25rem;
+  background-color: rgb(12, 0, 34);
+  color: rgb(180, 140, 255);
+  border: 1px solid rgba(234, 0, 255, 0.637);
+  border-radius: 0.25rem;
+  width: 20rem;
+  height: 2rem;
+  font-size: 1.25rem;
 }
 
-
 *:focus {
-    outline: 0;
-  }
+  outline: 0;
+}

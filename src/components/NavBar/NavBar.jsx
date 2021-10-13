@@ -42,7 +42,7 @@ const NavBar = () => {
           />
         ))}
       </motion.nav>
-      </AnimateSharedLayout>
+    </AnimateSharedLayout>
   );
 };
 

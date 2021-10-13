@@ -1,17 +1,17 @@
 .name-container {
-    margin-top: 5rem;
-    width: 1200px;
-    height: 400px;
-    display: flex;
-    place-content: center;
-    overflow: hidden;
-    border-radius: 30px;
-  }
+  margin-top: 5rem;
+  width: 1200px;
+  height: 400px;
+  display: flex;
+  place-content: center;
+  overflow: hidden;
+  border-radius: 30px;
+}
 
-  .name-svg {
-    width: 56%;
-    overflow: visible;
-    stroke-width: 2;
-    stroke-linejoin: round;
-    stroke-linecap: round;
-  }
+.name-svg {
+  width: 56%;
+  overflow: visible;
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}

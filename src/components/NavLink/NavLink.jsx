@@ -3,13 +3,11 @@ import { motion, useAnimation } from "framer-motion";
 import "./style";
 
 const NavLink = ({ text, link, isSelected, onClick }) => {
-  
-
   useEffect(() => {
     aControl.start({
-        color: isSelected ? "rgb(0, 197, 148)" : "#fff"
-      });
-  })
+      color: isSelected ? "rgb(0, 197, 148)" : "#fff",
+    });
+  });
 
   const aControl = useAnimation();
   const hoverDur = 0.33;

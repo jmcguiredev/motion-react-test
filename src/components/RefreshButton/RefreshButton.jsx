@@ -1,7 +1,7 @@
 import React from "react";
 import { RotateCw } from "react-feather";
 import { motion, useAnimation } from "framer-motion";
-import './style';
+import "./style";
 
 const RefreshButton = ({ handleClick }) => {
   const rotateDur = 0.4;

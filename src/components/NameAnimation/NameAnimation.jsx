@@ -2,10 +2,9 @@ import React, { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 // paths generated on https://danmarshall.github.io/google-font-to-svg-path/
 const { jmcguiredev } = require("../../paths.json");
-import './style'
+import "./style";
 
 const NameAnimation = React.memo(({ refresh, loaded }) => {
-
   const contControls = useAnimation();
   const textControls = useAnimation();
   const nameSizeStart = 0.3;
@@ -15,15 +14,15 @@ const NameAnimation = React.memo(({ refresh, loaded }) => {
     load();
   });
 
-  
-
   const load = () => {
-    
     textControls.start({
       pathLength: [0, 1],
       fill: "rgba(255, 255, 255, 0)",
       stroke: ["rgb(243, 0, 162, 0)", "rgb(250, 0, 229, 1)"],
-      transition: { pathLength: { duration: loaded ? 0 : 15 }, stroke: { duration: loaded ? 0 : 4 } },
+      transition: {
+        pathLength: { duration: loaded ? 0 : 15 },
+        stroke: { duration: loaded ? 0 : 4 },
+      },
     });
 
     contControls.start({
