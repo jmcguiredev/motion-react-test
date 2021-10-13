@@ -7,7 +7,7 @@ import { motion, useAnimation } from "framer-motion";
 
 const App = () => {
   const [refresh, setRefresh] = useState(false);
-  const [selected, setSelected] = useState(Name.name);
+  
   const [loaded, setLoaded] = useState(false);
   const boxControls = useAnimation();
 
@@ -20,6 +20,9 @@ const App = () => {
     componentNames: ["Name", "Test Component", "Nav Bar"],
   };
 
+  const [selected, setSelected] = useState(componentChoices.componentNames[0]);
+  const [prevSelected, setPrevSelected] = useState(null);
+
   const handleSelect = (e) => {
     let index = componentChoices.componentNames.indexOf(e.target.value);
 
@@ -30,6 +33,7 @@ const App = () => {
       },
     });
 
+    setPrevSelected(selected);
     setSelected(e.target.value);
   };
 
@@ -49,7 +53,7 @@ const App = () => {
       <motion.div animate={boxControls} className="component-slider">
         {componentChoices.componentNames.map((component) => {
           let index = componentChoices.componentNames.indexOf(component);
-          return (
+          return component === selected  || component === prevSelected ? (
             <motion.div
               className={`component-slider-box component-slider-box-${index}`}
               key={index}
@@ -57,7 +61,7 @@ const App = () => {
             >
               {componentChoices.components[index]}
             </motion.div>
-          );
+          ) : null;
         })}
       </motion.div>
     </div>
