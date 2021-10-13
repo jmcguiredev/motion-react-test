@@ -1,6 +1,6 @@
 import { motion, useAnimation } from "framer-motion";
 import React from "react";
-import "./componentSlider.scss";
+import "./style";
 
 const ComponentSlider = ({ boxControls, componentChoices, selected, prevSelected }) => {
   

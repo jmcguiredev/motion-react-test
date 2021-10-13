@@ -1,5 +1,5 @@
 import React from 'react';
-import './testComponent.scss';
+import './style';
 
 const TestComponent = ({ refresh }) => {
     return ( 

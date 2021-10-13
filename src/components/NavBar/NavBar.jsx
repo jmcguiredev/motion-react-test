@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimateSharedLayout } from "framer-motion";
 import NavLink from "../NavLink/NavLink";
-import "./navbar.scss";
+import "./style";
 
 const NavBar = () => {
   const links = [

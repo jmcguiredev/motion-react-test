@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
-import "./navLink.scss";
+import "./style";
 
 const NavLink = ({ text, link, isSelected, onClick }) => {
   

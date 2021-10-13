@@ -1,7 +1,7 @@
 import React from "react";
 import RefreshButton from "../RefreshButton/RefreshButton";
 import Select from "../Select/Select";
-import "./controls.scss";
+import "./style";
 
 const Controls = ({ handleClick, componentNames, selected, handleSelect }) => {
   return (

@@ -1,5 +1,5 @@
 import React from "react";
-import './select.scss';
+import './style';
 
 const Select = ({ componentNames, selected, handleSelect }) => {
   return (

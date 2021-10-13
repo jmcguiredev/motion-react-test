@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 // paths generated on https://danmarshall.github.io/google-font-to-svg-path/
 const { jmcguiredev } = require("../../paths.json");
-import './nameAnimation.scss'
+import './style'
 
 const NameAnimation = React.memo(({ refresh, loaded }) => {
 

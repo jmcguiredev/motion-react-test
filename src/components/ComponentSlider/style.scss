@@ -1,0 +1,16 @@
+.component-slider, .component-slider-box {
+    width: 100%; 
+    height: 100%;
+    display: flex;
+    overflow: visible;
+}
+  
+  .component-slider-box {
+    min-width: 100vw; 
+    height: 100%;
+    overflow: visible;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+  }
+  
