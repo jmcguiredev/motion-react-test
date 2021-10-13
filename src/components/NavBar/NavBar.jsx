@@ -1,13 +1,30 @@
 import React from 'react';
 import { motion, AnimateSharedLayout } from "framer-motion";
+import NavLink from '../NavLink/NavLink';
 import './navbar.scss'
 
 const NavBar = () => {
+
+    const links = [
+        {
+            text: "Home",
+             link:"#"
+        },
+        {
+            text: "About Us",
+             link:"#"
+        },
+        {
+            text: "Contact",
+             link:"#"
+        }
+    ];
+
     return ( 
         <motion.nav className="navbar">
-            <motion.a className="navbar-link" href="#">Home</motion.a>
-            <motion.a className="navbar-link" href="#">About Us</motion.a>
-            <motion.a className="navbar-link" href="#">Contact</motion.a>
+            {links.map((link) => (
+                <NavLink text={link.text} link={link.link}/>
+            ))}
         </motion.nav>
      );
 }
