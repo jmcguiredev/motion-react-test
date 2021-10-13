@@ -3,11 +3,11 @@ import Name from "./components/NameAnimation/NameAnimation";
 import Controls from "./components/Controls/Controls";
 import TestComponent from "./components/TestComponent/TestComponent";
 import NavBar from "./components/NavBar/NavBar";
-import { motion, useAnimation } from "framer-motion";
+import ComponentSlider from "./components/ComponentSlider/ComponentSlider";
+import { useAnimation } from "framer-motion";
 
 const App = () => {
   const [refresh, setRefresh] = useState(false);
-  
   const [loaded, setLoaded] = useState(false);
   const boxControls = useAnimation();
 
@@ -50,20 +50,12 @@ const App = () => {
         selected={selected}
         handleSelect={handleSelect}
       />
-      <motion.div animate={boxControls} className="component-slider">
-        {componentChoices.componentNames.map((component) => {
-          let index = componentChoices.componentNames.indexOf(component);
-          return component === selected  || component === prevSelected ? (
-            <motion.div
-              className={`component-slider-box component-slider-box-${index}`}
-              key={index}
-              style={{ right: -(index * 100) + "vw" }}
-            >
-              {componentChoices.components[index]}
-            </motion.div>
-          ) : null;
-        })}
-      </motion.div>
+      <ComponentSlider
+        boxControls={boxControls}
+        componentChoices={componentChoices}
+        selected={selected}
+        prevSelected={prevSelected}
+      />
     </div>
   );
 };
