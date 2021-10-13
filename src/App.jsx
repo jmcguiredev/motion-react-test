@@ -2,6 +2,7 @@ import React, { Component, useState } from "react";
 import Name from "./components/NameAnimation/NameAnimation";
 import Controls from "./components/Controls/Controls";
 import TestComponent from "./components/TestComponent/TestComponent";
+import NavBar from "./components/NavBar/NavBar";
 import { motion, useAnimation } from "framer-motion";
 
 const App = () => {
@@ -14,8 +15,9 @@ const App = () => {
     components: [
       <Name refresh={refresh} />,
       <TestComponent refresh={refresh} />,
+      <NavBar refresh={refresh} />,
     ],
-    componentNames: ["Name", "TestComponent"],
+    componentNames: ["Name", "Test Component", "Nav Bar"],
   };
 
   const handleSelect = (e) => {
