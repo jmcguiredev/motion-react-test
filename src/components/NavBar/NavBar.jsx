@@ -30,19 +30,22 @@ const NavBar = () => {
   });
 
   return (
-    <AnimateSharedLayout>
-      <motion.nav className="navbar">
-        {links.map((link) => (
-          <NavLink
-            key={link.text}
-            text={link.text}
-            link={link.link}
-            onClick={() => setSelected(link.text)}
-            isSelected={selected === link.text}
-          />
-        ))}
-      </motion.nav>
-    </AnimateSharedLayout>
+    <div className="navbar-cont">
+      <AnimateSharedLayout>
+        <motion.nav className="navbar">
+          {links.map((link) => (
+            <NavLink
+              key={link.text}
+              text={link.text}
+              link={link.link}
+              onClick={() => setSelected(link.text)}
+              isSelected={selected === link.text}
+            />
+          ))}
+        </motion.nav>
+      </AnimateSharedLayout>
+    </div>
+
   );
 };
 
