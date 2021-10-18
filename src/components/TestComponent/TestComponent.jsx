@@ -3,7 +3,7 @@ import "./style";
 
 const TestComponent = ({ refresh }) => {
   return (
-    <div>
+    <div className="test-cont">
       <h1>Hello World</h1>
     </div>
   );
