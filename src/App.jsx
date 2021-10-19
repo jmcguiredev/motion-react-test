@@ -1,5 +1,6 @@
 import React, { Component, useState } from "react";
 import Name from "./components/NameAnimation/NameAnimation";
+import NameWaterFill from "./components/NameWaterFill.jsx/NameWaterFill";
 import Controls from "./components/Controls/Controls";
 import TestComponent from "./components/TestComponent/TestComponent";
 import NavBar from "./components/NavBar/NavBar";
@@ -14,10 +15,10 @@ const App = () => {
   const componentChoices = {
     components: [
       <Name refresh={refresh} />,
-      <TestComponent refresh={refresh} />,
+      <NameWaterFill refresh={refresh} />,
       <NavBar refresh={refresh} />,
     ],
-    componentNames: ["Name", "Test Component", "Nav Bar"],
+    componentNames: ["Name", "Name Water Fill", "Nav Bar"],
   };
 
   const [selected, setSelected] = useState(componentChoices.componentNames[0]);
