@@ -5,7 +5,7 @@ import TestComponent from "./components/TestComponent/TestComponent";
 import NavBar from "./components/NavBar/NavBar";
 import ComponentSlider from "./components/ComponentSlider/ComponentSlider";
 import { useAnimation } from "framer-motion";
-import HambugerMenu from "./components/HamburgerMenu/HambugerMenu";
+import HamburgerMenu from "./components/HamburgerMenu/HamburgerMenu";
 
 const App = () => {
   const [refresh, setRefresh] = useState(false);
@@ -15,10 +15,10 @@ const App = () => {
   const componentChoices = {
     components: [
       <Name refresh={refresh} />,
-      <HambugerMenu refresh={refresh} />,
+      <HamburgerMenu refresh={refresh} />,
       <NavBar refresh={refresh} />,
     ],
-    componentNames: ["Name", "Hambuger Menu", "Nav Bar"],
+    componentNames: ["Name", "Hamburger Menu", "Nav Bar"],
   };
 
   const [selected, setSelected] = useState(componentChoices.componentNames[0]);

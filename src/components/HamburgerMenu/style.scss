@@ -3,10 +3,19 @@
     border: 1px solid rgb(234, 0, 255);
     width: 70vw;
     height: 70vh;
+    // overflow: hidden;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.hamburger-menu {
+    border: 1px solid orange;
+    width: 0rem;
+    height: 0rem;
 }
 
 .hamburger-menu-button {
-    width: 2.5em;
+    width: 2.5rem;
     height: 2.5rem;
     border: 1px solid rgb(234, 0, 255);
     margin: 1rem;
@@ -14,6 +23,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    position: absolute;
 }
 
 .button-stripe {
