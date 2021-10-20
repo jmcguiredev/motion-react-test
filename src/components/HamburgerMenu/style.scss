@@ -1,0 +1,25 @@
+
+.hamburger-menu-cont {
+    border: 1px solid rgb(234, 0, 255);
+    width: 70vw;
+    height: 70vh;
+}
+
+.hamburger-menu-button {
+    width: 2.5em;
+    height: 2.5rem;
+    border: 1px solid rgb(234, 0, 255);
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.button-stripe {
+    width: 90%;
+    height: 0.25rem;
+    background-color: white;
+    display: block;
+    border-radius: 1rem;
+}
